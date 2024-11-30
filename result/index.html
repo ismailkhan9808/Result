@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESULT</title>
+
+
+    <h1><b>MARK SHEET</b></h1>
+  <style>
+   th, td{
+      padding: 10px 20px;
+      border: 1px solid black;
+   
+   }
+   h1{
+    text-align: center;
+   }
+
+     table{
+      text-align: center;
+     }
+  </style>
+</head>
+<body>
+<label for="phytotal">Total Number of Physics
+    <input type="number" id="phytotal">
+</label><br>
+<label for="phyobt">Obtain Number of Physics
+    <input type="number" id="phyobt">
+</label><br>
+<label for="mathtotal">Total Number of Math
+    <input type="number" id="mathtotal">
+</label><br>
+<label for="mathobt">Obtain Number of Math
+    <input type="number" id="mathobt">
+</label><br>
+<label for="comptotal">Total Number of Computer
+    <input type="number" id="comptotal">
+</label><br>
+<label for="compobt">Obtain Number of Computer
+    <input type="number" id="compobt">
+</label>
+<button onclick="checkout()">Check</button>
+<div class="">
+<table>
+<tr>
+   <th>Subject</th>
+   <th>Total</th>
+   <th>Obtain</th>
+   <th>Percentage</th>
+   <th>Grade</th>
+</tr>
+<tr>
+   <th>Physics</th>
+   <td id="showtotalphy"></td>
+   <td id="showobtphy"></td>
+   <td id="showpercentagephy"></td>
+   <td id="showgradephy"></td>
+
+</tr>
+<tr>
+    <th>Math</th>
+    <td id="showtotalmath"></td>
+    <td id="showobtmath"></td>
+    <td id="showpercentagemath"></td>
+    <td id="showgrademath"></td>
+ 
+ </tr>
+ <tr>
+    <th>Computer</th>
+    <td id="showtotalcomp"></td>
+    <td id="showobtcomp"></td>
+    <td id="showpercentagecomp"></td>
+    <td id="showgradecomp"></td>
+ 
+ </tr>
+ <tr>
+    <th>Over All</th>
+    <td id="showtotalall"></td>
+    <td id="showobtall"></td>
+    <td id="showpercentageall"></td>
+    <td id="showgradeall"></td>
+ 
+ </tr>
+</table>
+</div>
+<script>
+ function checkout(){
+ let total_number_of_physics = Number(document.getElementById("phytotal").value);
+ let Obtain_Number_of_physics = Number(document.getElementById("phyobt").value);
+ let percentage_of_physics=(Obtain_Number_of_physics/total_number_of_physics)*100
+ let Total_Number_of_Math = Number(document.getElementById("mathtotal").value);
+ let Obtain_Number_of_Math = Number(document.getElementById("mathobt").value);
+ let percentage_of_Math=(Obtain_Number_of_Math/Total_Number_of_Math)*100
+ let Total_Number_of_comp = Number(document.getElementById("comptotal").value);
+ let Obtain_Number_of_comp = Number(document.getElementById("compobt").value);
+ let percentage_of_comp=(Obtain_Number_of_comp/Total_Number_of_comp)*100
+ 
+ document.getElementById("showtotalphy").innerText=total_number_of_physics;
+ document.getElementById("showobtphy").innerText= Obtain_Number_of_physics;
+ document.getElementById("showpercentagephy").innerText= percentage_of_physics +"%";
+
+  if(percentage_of_physics >=80){
+    document.getElementById("showgradephy").innerText="A+"
+  }
+  else if(percentage_of_physics >=70){
+    document.getElementById("showgradephy").innerText="A"
+  }
+  else if(percentage_of_physics >=60){
+    document.getElementById("showgradephy").innerText="B"
+  }
+  else if(percentage_of_physics >=50){
+    document.getElementById("showgradephy").innerText="c"
+  }
+  else{
+    document.getElementById("showgradephy").innerText="Fail"
+  }
+
+ document.getElementById("showtotalmath").innerText=Total_Number_of_Math;
+ document.getElementById("showobtmath").innerText= Obtain_Number_of_Math;
+ document.getElementById("showpercentagemath").innerText=  percentage_of_Math +"%";
+ 
+ if(percentage_of_Math>=80){
+    document.getElementById("showgrademath").innerText="A+"
+  }
+  else if(percentage_of_Math >=70){
+    document.getElementById("showgrademath").innerText="A"
+  }
+  else if(percentage_of_Math >=60){
+    document.getElementById("showgrademath").innerText="B"
+  }
+  else if(percentage_of_Math >=50){
+    document.getElementById("showgrademath").innerText="c"
+  }
+  else{
+    document.getElementById("showgrademath").innerText="Fail"
+  }
+  
+  document.getElementById("showtotalcomp").innerText=Total_Number_of_comp;
+ document.getElementById("showobtcomp").innerText= Obtain_Number_of_comp;
+ document.getElementById("showpercentagecomp").innerText=  percentage_of_comp +"%";
+ 
+ if(percentage_of_comp>=80){
+    document.getElementById("showgradecomp").innerText="A+"
+  }
+  else if(percentage_of_comp >=70){
+    document.getElementById("showgradecomp").innerText="A"
+  }
+  else if(percentage_of_comp >=60){
+    document.getElementById("showgradecomp").innerText="B"
+  }
+  else if(percentage_of_comp >=50){
+    document.getElementById("showgradecomp").innerText="c"
+  }
+  else{
+    document.getElementById("showgradecomp").innerText="Fail"
+  }
+
+  let total_number_of_All_Subject=total_number_of_physics+Total_Number_of_Math+ Total_Number_of_comp
+  let obtained_number_of_All_Subject=Obtain_Number_of_physics+ Obtain_Number_of_Math+Obtain_Number_of_comp
+  let percentage_of_All_Subject=percentage_of_physics+percentage_of_Math+percentage_of_comp
+ document.getElementById("showtotalall").innerText=total_number_of_All_Subject;
+ document.getElementById("showobtall").innerText=obtained_number_of_All_Subject;
+ document.getElementById("showpercentageall").innerText= percentage_of_All_Subject +"%";
+ 
+ if(percentage_of_All_Subject>=80){
+    document.getElementById("showgradeall").innerText="A+"
+  }
+  else if(percentage_of_All_Subject >=70){
+    document.getElementById("showgradeall").innerText="A"
+  }
+  else if(percentage_of_All_Subject >=60){
+    document.getElementById("showgradeall").innerText="B"
+  }
+  else if(percentage_of_All_Subject >=50){
+    document.getElementById("showgradeall").innerText="c"
+  }
+  else{
+    document.getElementById("showgradeall").innerText="Fail"
+  }
+
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
