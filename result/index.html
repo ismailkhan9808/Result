@@ -159,21 +159,21 @@
 
   let total_number_of_All_Subject=total_number_of_physics+Total_Number_of_Math+ Total_Number_of_comp
   let obtained_number_of_All_Subject=Obtain_Number_of_physics+ Obtain_Number_of_Math+Obtain_Number_of_comp
-  let percentage_of_All_Subject=percentage_of_physics+percentage_of_Math+percentage_of_comp
+  let percentage_of_All_Subject=(obtained_number_of_All_Subject/total_number_of_All_Subject)*100
  document.getElementById("showtotalall").innerText=total_number_of_All_Subject;
  document.getElementById("showobtall").innerText=obtained_number_of_All_Subject;
  document.getElementById("showpercentageall").innerText= percentage_of_All_Subject +"%";
  
- if(percentage_of_All_Subject>=250){
+ if(percentage_of_All_Subject>=80){
     document.getElementById("showgradeall").innerText="A+"
   }
-  else if(percentage_of_All_Subject >=190){
+  else if(percentage_of_All_Subject >=70){
     document.getElementById("showgradeall").innerText="A"
   }
-  else if(percentage_of_All_Subject >=150){
+  else if(percentage_of_All_Subject >=60){
     document.getElementById("showgradeall").innerText="B"
   }
-  else if(percentage_of_All_Subject >=100){
+  else if(percentage_of_All_Subject >=50){
     document.getElementById("showgradeall").innerText="c"
   }
   else{
